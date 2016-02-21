@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="6" failures="0" name="org.timesheet.web.TimesheetControllerTest" time="1.289" errors="0" skipped="0">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_72\jre\bin"/>
+    <property name="java.vm.version" value="25.72-b15"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\NidhiDeepa\Documents\workspace_sts_3_7_2_RELEASE\timesheet"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=";"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="Service Pack 1"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="C:\Users\NidhiDeepa\Documents\workspace_sts_3_7_2_RELEASE\timesheet"/>
+    <property name="java.runtime.version" value="1.8.0_72-b15"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_72\jre\lib\endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\Users\NIDHID~1\AppData\Local\Temp\"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 7"/>
+    <property name="classworlds.conf" value="C:\Users\NidhiDeepa\Documents\workspace_sts_3_7_2_RELEASE\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf1446722138731345827.tmp"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_72\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jdk1.8.0_72/bin/../jre/bin/server;C:/Program Files/Java/jdk1.8.0_72/bin/../jre/bin;C:/Program Files/Java/jdk1.8.0_72/bin/../jre/lib/amd64;C:\Python35\Scripts\;C:\Python35\;C:\apache-maven-3.3.3\bin;C:\Program Files\Java\jdk1.8.0_72\bin;c:\program files (x86)\amd app\bin\x86_64;c:\program files (x86)\amd app\bin\x86;c:\program files (x86)\hp simplepass 2011\x64;c:\program files (x86)\hp simplepass 2011\;c:\program files\common files\microsoft shared\windows live;c:\program files (x86)\common files\microsoft shared\windows live;C:\Windows\system32;C:\Windows;C:\Windows\system32\wbem;C:\Windows\system32\windowspowershell\v1.0\;c:\program files (x86)\common files\roxio shared\dllshared\;c:\program files (x86)\common files\roxio shared\dllshared\;c:\program files (x86)\common files\roxio shared\12.0\dllshared\;c:\program files (x86)\windows live\shared;c:\program files (x86)\ati technologies\ati.ace\core-static;c:\program files (x86)\intel\services\ipt\;c:\program files\intel\wifi\bin\;c:\program files\common files\intel\wirelesscommon\;c:\program files\ibm\gsk8\lib64;c:\program files (x86)\ibm\gsk8\lib;C:\Program Files\nodejs\;C:\Program Files\Microsoft Windows Performance Toolkit\;C:\Program Files (x86)\Vagrant\bin;C:\Program Files (x86)\WinMerge;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files (x86)\Skype\Phone\;C:\Users\NidhiDeepa\Downloads\IEDriverServer_x64_2_50_0;C:\Program Files (x86)\Common Files\Acronis\SnapAPI\;C:\Program Files (x86)\MySQL\MySQL Fabric 1.5 &amp; MySQL Utilities 1.5\;C:\Program Files (x86)\MySQL\MySQL Fabric 1.5 &amp; MySQL Utilities 1.5\Doctrine extensions for PHP\;C:\Ruby193\bin;C:\Program Files (x86)\Google\Chrome\Application;C:\Program Files\Java\jdk1.8.0_72\bin;C:\apache_ant_1_9_3\bin;C:\Program Files (x86)\Google\google_appengine\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\NidhiDeepa\AppData\Roaming\npm;C:\Users\NidhiDeepa\Downloads\IEDriverServer_x64_2_50_0;C:\apache-maven-3.3.3\bin;C:\Program Files (x86)\Common Files\Acronis\TibMounter64;C:\sts-bundle\sts-3.7.2.RELEASE;;."/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="6.1"/>
+    <property name="user.home" value="C:\Users\NidhiDeepa"/>
+    <property name="user.timezone" value="America/New_York"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="user.name" value="NidhiDeepa"/>
+    <property name="java.class.path" value="/C:/sts-bundle/sts-3.7.2.RELEASE/plugins/org.eclipse.m2e.maven.runtime_1.6.2.20150902-0001/jars/plexus-classworlds-2.5.2.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_72\jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -B install"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_72"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_72\jre\lib\ext;C:\Windows\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_72\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_72\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_72\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_72\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_72\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_72\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_72\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_72\jre\classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="C:\Users\NidhiDeepa\Documents\workspace_sts_3_7_2_RELEASE\timesheet\EMBEDDED"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+  </properties>
+  <testcase classname="org.timesheet.web.TimesheetControllerTest" name="testShowTimesheets" time="0.101"/>
+  <testcase classname="org.timesheet.web.TimesheetControllerTest" name="testDeleteTimesheet" time="0.157"/>
+  <testcase classname="org.timesheet.web.TimesheetControllerTest" name="testUpdateTimesheetValid" time="0.208"/>
+  <testcase classname="org.timesheet.web.TimesheetControllerTest" name="testUpdateTimesheetInValid" time="0.213"/>
+  <testcase classname="org.timesheet.web.TimesheetControllerTest" name="testGetTimesheet" time="0.31"/>
+  <testcase classname="org.timesheet.web.TimesheetControllerTest" name="testAddTimesheet" time="0.3"/>
+</testsuite>
