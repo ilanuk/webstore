@@ -20,4 +20,9 @@ public class CustomerServiceImpl implements CustomerService {
 		return customerRepository.getAllCustomers();
 	}
 
+	@Override
+	public Customer getCustomerById(String customerID) {
+		return customerRepository.getCustomerById(customerID);
+	}
+
 }
