@@ -5,7 +5,9 @@ import java.math.BigDecimal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.packt.webstore.domain.Product;
 import com.packt.webstore.service.ProductService;
@@ -29,4 +31,19 @@ public class ProductController {
 	  
 	return "products";
 	}
+	
+	@RequestMapping("/category/{myCategoryId}")
+	public String listProductsByCategory(Model model,@PathVariable("myCategoryId") String categoryId) {
+		  model.addAttribute("products", productService.getProductsByCategory(categoryId));
+			return "products";
+	}
+	
+	@RequestMapping("/modelview")
+	public ModelAndView allProducts() {
+		ModelAndView modelView = new ModelAndView();
+		modelView.addObject("products", productService.getAllProducts());
+		modelView.setViewName("products");
+		return modelView;
+	}
+
 }

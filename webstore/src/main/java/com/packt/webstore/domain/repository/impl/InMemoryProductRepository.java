@@ -59,5 +59,20 @@ public class InMemoryProductRepository implements ProductRepository {
 	    
 	    return productById;
 	}
+	@Override
+	public List<Product> getProductsByCategory(String category) {
+	    List<Product> productsByCategory = new ArrayList<>();
+	    
+	    for(Product product : listOfProducts) {
+	      if(product!=null && product.getCategory()!=null && product.getCategory().equals(category)){
+	    	  productsByCategory.add(product);
+	      }
+	    }
+	    
+	    if(productsByCategory.size()==0){
+	      throw new IllegalArgumentException("No products found in this category: "+ category);
+	    }
+	    
+	    return productsByCategory;	}
 
 }
