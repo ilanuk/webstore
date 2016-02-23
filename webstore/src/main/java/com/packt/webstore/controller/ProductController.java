@@ -8,12 +8,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.packt.webstore.domain.Product;
-import com.packt.webstore.domain.repository.ProductRepository;
+//import com.packt.webstore.domain.repository.ProductRepository;
+import com.packt.webstore.service.impl.ProductServiceImpl;
 
 @Controller
 public class ProductController {
 	@Autowired
-	private ProductRepository productRepository;
+	//private ProductRepository productRepository;
+	private ProductServiceImpl productServiceImpl; 
 	
 	@RequestMapping("/products")
 	public String list(Model model) {
@@ -24,7 +26,7 @@ public class ProductController {
 //	    iphone.setUnitsInStock(1000);
 //	    
 //	    model.addAttribute("product", iphone);
-		model.addAttribute("products", productRepository.getAllProducts());
+		model.addAttribute("products", productServiceImpl.getAllProducts());
 	    return "products";
 	}
 
