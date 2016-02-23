@@ -8,14 +8,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.packt.webstore.domain.Product;
+import com.packt.webstore.service.ProductService;
 //import com.packt.webstore.domain.repository.ProductRepository;
-import com.packt.webstore.service.impl.ProductServiceImpl;
 
 @Controller
 public class ProductController {
 	@Autowired
 	//private ProductRepository productRepository;
-	private ProductServiceImpl productServiceImpl; 
+	private ProductService productServiceImpl; 
 	
 	@RequestMapping("/products")
 	public String list(Model model) {
