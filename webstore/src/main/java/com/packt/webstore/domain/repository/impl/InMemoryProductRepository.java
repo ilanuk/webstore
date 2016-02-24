@@ -64,7 +64,7 @@ public class InMemoryProductRepository implements ProductRepository {
 	    List<Product> productsByCategory = new ArrayList<>();
 	    
 	    for(Product product : listOfProducts) {
-	      if(product!=null && product.getCategory()!=null && product.getCategory().equals(category)){
+	      if(product!=null && product.getCategory()!=null && product.getCategory().equalsIgnoreCase(category)){
 	    	  productsByCategory.add(product);
 	      }
 	    }
