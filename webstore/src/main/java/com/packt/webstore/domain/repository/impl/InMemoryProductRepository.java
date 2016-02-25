@@ -37,10 +37,18 @@ public class InMemoryProductRepository implements ProductRepository {
 	    tablet_Nexus.setManufacturer("Google");
 	    tablet_Nexus.setUnitPrice(new BigDecimal(200));
 	    tablet_Nexus.setUnitsInStock(1000);
+
+	    Product ipad = new Product("P1237","iPad", new BigDecimal(500));
+	    ipad.setDescription("Apple iPad with 10.00-inch 640x1136 display and 8-megapixel rear camera");
+	    ipad.setCategory("Tablet");
+	    ipad.setManufacturer("Apple");
+	    ipad.setUnitPrice(new BigDecimal(400));
+	    ipad.setUnitsInStock(1100);
 	    
 	    listOfProducts.add(iphone);
 	    listOfProducts.add(laptop_dell);
 	    listOfProducts.add(tablet_Nexus);
+	    listOfProducts.add(ipad);
 
 	  }
 	@Override
@@ -70,7 +78,7 @@ public class InMemoryProductRepository implements ProductRepository {
 	    List<Product> productsByCategory = new ArrayList<>();
 	    
 	    for(Product product : listOfProducts) {
-	      if(product!=null && product.getCategory()!=null && product.getCategory().equalsIgnoreCase(category)){
+	      if(product!=null && product.getCategory()!=null && product.getCategory().equalsIgnoreCase(category.replace("\"", ""))){
 	    	  productsByCategory.add(product);
 	      }
 	    }
@@ -79,7 +87,9 @@ public class InMemoryProductRepository implements ProductRepository {
 	      throw new IllegalArgumentException("No products found in this category: "+ category);
 	    }
 	    
-	    return productsByCategory;	}
+	    return productsByCategory;	
+	}
+	
 	@Override
 	public Set<Product> getProductsByFilter(Map<String, List<String>> filterParams) {
 	    Set<Product> productsByBrand = new HashSet<Product>();
@@ -109,7 +119,7 @@ public class InMemoryProductRepository implements ProductRepository {
 	@Override
 	public Set<Product> getProductsByPriceFilter(Map<String, List<String>> filterParams) {
 		
-	    Set<Product> productsByLow = new HashSet<Product>();
+		Set<Product> productsByLow = new HashSet<Product>();
 	    Set<Product> productsByHigh = new HashSet<Product>();
 	    
 	    Set<String> criterias = filterParams.keySet();
@@ -133,9 +143,43 @@ public class InMemoryProductRepository implements ProductRepository {
 	          }
 	        }
 	      }
+
 	    productsByLow.retainAll(productsByHigh);
 	    
 		return productsByLow;
+	}
+	@Override
+	public Set<Product> getProductsByCategoryPriceManufacturer(String category, Map<String, List<String>> priceParms,
+			String manufacturer) {
+		
+		Set<Product> productsByCategory = new HashSet<Product>();
+	    Set<Product> productsByPriceFilter = this.getProductsByPriceFilter(priceParms);
+		Set<Product> productsByManufacturer = new HashSet<Product>();
+	    
+        
+		productsByCategory.addAll(this.getProductsByCategory(category));
+        productsByManufacturer.addAll(this.getProductsByManufacturer(manufacturer));
+	    
+        productsByPriceFilter.retainAll(productsByCategory);
+        productsByPriceFilter.retainAll(productsByManufacturer);
+	    
+		return productsByPriceFilter;
+	}
+	@Override
+	public List<Product> getProductsByManufacturer(String manufacturer) {
+	    List<Product> productsByManufacturer = new ArrayList<>();
+	    
+	    for(Product product : listOfProducts) {
+	      if(product!=null && product.getManufacturer()!=null && product.getManufacturer().equalsIgnoreCase(manufacturer.replace("\"", ""))){
+	    	  productsByManufacturer.add(product);
+	      }
+	    }
+	    
+	    if(productsByManufacturer.size()==0){
+	      throw new IllegalArgumentException("No products found for this manufacturer: "+ manufacturer);
+	    }
+	    
+	    return productsByManufacturer;	
 	}
 
 }

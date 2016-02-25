@@ -19,19 +19,16 @@ public class ProductServiceImpl implements ProductService{
 	
 	@Override
 	public List<Product> getAllProducts() {
-		// TODO Auto-generated method stub
 		return productRepository.getAllProducts();
 	}
 
 	@Override
 	public Product getProductById(String productID) {
-		// TODO Auto-generated method stub
 		return productRepository.getProductById(productID);
 	}
 
 	@Override
 	public List<Product> getProductsByCategory(String category) {
-		// TODO Auto-generated method stub
 		return productRepository.getProductsByCategory(category);
 	}
 
@@ -44,7 +41,16 @@ public class ProductServiceImpl implements ProductService{
 	public Set<Product> getProductsByPriceFilter(Map<String, List<String>> filterParams) {
 		return productRepository.getProductsByPriceFilter(filterParams);
 	}
+	@Override
+	public List<Product> getProductsByManufacturer(String manufacturer) {
+		return productRepository.getProductsByManufacturer(manufacturer);
+	}
 
+	@Override
+	public Set<Product> getProductsByCategoryPriceManufacturer(String category, Map<String, List<String>> price,
+			String manufacturer) {
+		return productRepository.getProductsByCategoryPriceManufacturer(category,price,manufacturer);
+	}
 	
 	
 
