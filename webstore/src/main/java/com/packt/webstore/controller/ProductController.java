@@ -9,8 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.MatrixVariable;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -73,5 +75,21 @@ public class ProductController {
 		model.addAttribute("products",productService.getProductsByCategoryPriceManufacturer(category,price,manufacturer));
 		return "products";
 		
+	}
+	
+	@RequestMapping(value = "/add", method = RequestMethod.GET)
+//	public String getAddNewProductForm(Model model) {
+//	   Product newProduct = new Product();
+//	   model.addAttribute("newProduct", newProduct);
+// In below way, Spring automatically creates an object of type Product
+// and attach it to model under the name newProduct
+	public String getAddNewProductForm(@ModelAttribute("newProduct") Product newProduct) {
+	   return "addProduct";
+	}
+	   
+	@RequestMapping(value = "/add", method = RequestMethod.POST)
+	public String processAddNewProductForm(@ModelAttribute("newProduct") Product productToBeAdded) {
+	   productService.addProduct( productToBeAdded);
+	   return "redirect:/products";
 	}
 }
