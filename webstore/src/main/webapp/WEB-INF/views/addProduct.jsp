@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
@@ -22,11 +23,11 @@
         <legend>Add new product</legend>
 
         <div class="form-group">
-          <label class="control-label col-lg-2 col-lg-2" for="productId">Product Id</label>
+          <label class="control-label col-lg-2 col-lg-2" for="productId"><spring:message code="addProduct.form.productId.label"/></label>
           <div class="col-lg-10">
             <form:input id="productId" path="productId" type="text" class="form:input-large"/>
           </div>
-          <label class="control-label col-lg-2 col-lg-2" for="name">Product Name</label>
+          <label class="control-label col-lg-2 col-lg-2" for="name"><spring:message code="addProduct.form.productName.label"/></label>
           <div class="col-lg-10">
             <form:input id="name" path="name" type="text" class="form:input-large"/>
           </div>
@@ -46,10 +47,11 @@
           <div class="col-lg-10">
             <form:input id="unitsInStock" path="unitsInStock" type="text" class="form:input-large"/>
           </div>
-          <label class="control-label col-lg-2 col-lg-2" for="unitsInOrder">Units In Order</label>
-          <div class="col-lg-10">
+<!-- following field commented out ---Disallowed field in InitBinder -->
+          <!-- label class="control-label col-lg-2 col-lg-2" for="unitsInOrder">Units In Order</label-->
+          <!-- div class="col-lg-10">
             <form:input id="unitsInOrder" path="unitsInOrder" type="text" class="form:input-large"/>
-          </div>
+          </div-->
         </div>
         <div class="form-group">
           <label class="control-label col-lg-2" for="description">Description</label>
@@ -58,12 +60,13 @@
           </div>
         </div>
 
-        <div class="form-group">
+<!-- following field commented out ---Disallowed field in InitBinder -->
+        <!-- div class="form-group">
           <label class="control-label col-lg-2" for="discontinued">Discontinued</label>
           <div class="col-lg-10">
             <form:checkbox  id="discontinued" path="discontinued"/>
           </div>
-        </div>
+        </div-->
         
         <div class="form-group">
           <label class="control-label col-lg-2" for="condition">Condition</label>
