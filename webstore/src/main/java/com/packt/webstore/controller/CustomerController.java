@@ -8,17 +8,32 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.packt.webstore.service.CustomerService;
 
 @Controller
+@RequestMapping("/customers")
 public class CustomerController {
 	@Autowired
 	CustomerService customerService;
 	
-	@RequestMapping("/customers")
-	
-	
+	@RequestMapping
 	private String list(Model model) {
 		model.addAttribute("customers", customerService.getAllCustomers());
 		return "customers";
 		
 	}
+	
+	@RequestMapping("/list")
+	  public String listme(Model model) {
+		model.addAttribute("customers", customerService.getAllCustomers());
+	    return "customers";
+	  }
+
+	  @RequestMapping("/process")
+	  public String process() {
+	    return "forward:/customers/list"; 
+	  }
+	  
+	  @RequestMapping("/processProd")
+	  public String processProd() {
+	    return "forward:/products"; 
+	  }
 
 }

@@ -10,6 +10,10 @@
 
   <mvc:annotation-driven enable-matrix-variables="true"/>
   <context:component-scan base-package="com.packt.webstore" />
+  <mvc:resources location="/resources/" mapping="/resource/**"/>
+  <!-- sample URL http://localhost:8080/webstore/resource/pdf/product/manuals/manual-P1234.pdf -->
+  <mvc:resources location="/pdf/" mapping="/resources/**"/>
+  <!-- sample URL http://localhost:8080/webstore/resources/product/manuals/manual-P1234.pdf -->
   
   <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
     <property name="prefix" value="/WEB-INF/views/" />
