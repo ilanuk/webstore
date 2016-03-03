@@ -21,7 +21,7 @@
     </div>
   </section>
   <section class="container">
-    <form:form  modelAttribute="newProduct" class="form-horizontal">
+    <form:form  modelAttribute="newProduct" class="form-horizontal" enctype="multipart/form-data">
       <fieldset>
         <legend>Add new product</legend>
 
@@ -34,19 +34,19 @@
           <div class="col-lg-10">
             <form:input id="name" path="name" type="text" class="form:input-large"/>
           </div>
-          <label class="control-label col-lg-2 col-lg-2" for="unitPrice">Unit Price</label>
+          <label class="control-label col-lg-2 col-lg-2" for="unitPrice"><spring:message code="addProduct.form.productUnitPrice.label"/></label>
           <div class="col-lg-10">
             <form:input id="unitPrice" path="unitPrice" type="text" class="form:input-large"/>
           </div>
-          <label class="control-label col-lg-2 col-lg-2" for="manufacturer">Manufacturer</label>
+          <label class="control-label col-lg-2 col-lg-2" for="manufacturer"><spring:message code="addProduct.form.productManufacturer.label"/></label>
           <div class="col-lg-10">
             <form:input id="manufacturer" path="manufacturer" type="text" class="form:input-large"/>
           </div>
-          <label class="control-label col-lg-2 col-lg-2" for="category">Category</label>
+          <label class="control-label col-lg-2 col-lg-2" for="category"><spring:message code="addProduct.form.productCategory.label"/></label>
           <div class="col-lg-10">
             <form:input id="category" path="category" type="text" class="form:input-large"/>
           </div>
-          <label class="control-label col-lg-2 col-lg-2" for="unitsInStock">Units In Stock</label>
+          <label class="control-label col-lg-2 col-lg-2" for="unitsInStock"><spring:message code="addProduct.form.productUnitsInStock.label"/></label>
           <div class="col-lg-10">
             <form:input id="unitsInStock" path="unitsInStock" type="text" class="form:input-large"/>
           </div>
@@ -57,28 +57,36 @@
           </div-->
         </div>
         <div class="form-group">
-          <label class="control-label col-lg-2" for="description">Description</label>
+          <label class="control-label col-lg-2" for="description"><spring:message code="addProduct.form.productDescription.label"/></label>
           <div class="col-lg-10">
             <form:textarea id="description" path="description" rows = "2"/>
           </div>
         </div>
 
-<!-- following field commented out ---Disallowed field in InitBinder -->
-        <!-- div class="form-group">
-          <label class="control-label col-lg-2" for="discontinued">Discontinued</label>
-          <div class="col-lg-10">
-            <form:checkbox  id="discontinued" path="discontinued"/>
-          </div>
-        </div-->
-        
+       
         <div class="form-group">
-          <label class="control-label col-lg-2" for="condition">Condition</label>
+          <label class="control-label col-lg-2" for="condition"><spring:message code="addProduct.form.productCondition.label"/></label>
           <div class="col-lg-10">
             <form:radiobutton path="condition" value="New" />New 
             <form:radiobutton path="condition" value="Old" />Old 
             <form:radiobutton path="condition" value="Refurbished" />Refurbished
           </div>
         </div>
+        
+        <div class="form-group">
+  			<label class="control-label col-lg-2" for="productImage"><spring:message code="addProdcut.form.productImage.label"/></label>
+  			<div class="col-lg-10">
+    			<form:input id="productImage" path="productImage" type="file" class="form:input-large" />
+  			</div>
+		</div>
+
+        <div class="form-group">
+  			<label class="control-label col-lg-2" for="productManual"><spring:message code="addProdcut.form.productManual.label"/></label>
+  			<div class="col-lg-10">
+    			<form:input id="productImage" path="productManual" type="file" class="form:input-large" />
+  			</div>
+		</div>
+
         
         <div class="form-group">
           <div class="col-lg-offset-2 col-lg-10">

@@ -2,6 +2,8 @@ package com.packt.webstore.domain;
 
 import java.math.BigDecimal;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class Product {
 	
 	  private String productId;
@@ -14,6 +16,8 @@ public class Product {
 	  private long unitsInOrder;
 	  private boolean discontinued;
 	  private String condition;
+	  private MultipartFile  productImage;
+	  private MultipartFile  productManual;
 
 	  public Product() {
 	    super();
@@ -82,6 +86,22 @@ public class Product {
 	}
 	public void setCondition(String condition) {
 		this.condition = condition;
+	}
+	
+	
+	public MultipartFile getProductImage() {
+		return productImage;
+	}
+	public void setProductImage(MultipartFile productImage) {
+		this.productImage = productImage;
+	}
+	
+	
+	public MultipartFile getProductManual() {
+		return productManual;
+	}
+	public void setProductManual(MultipartFile productManual) {
+		this.productManual = productManual;
 	}
 	@Override
 	public int hashCode() {
