@@ -14,6 +14,9 @@
       <div class="container">
         <h1>Products</h1>
       </div>
+      <div class="pull-right" style="padding-right:50px">
+	  	<a href="product?id=${product.productId}&language=en" >English</a>|<a href="product?id=${product.productId}&language=nl" >Dutch</a>
+	</div>
     </div>
   </section>
   <section class="container">
@@ -25,16 +28,16 @@
         <h3>${product.name}</h3>
         <p>${product.description}</p>
         <p>
-          <strong>Item Code : </strong><span class="label label-warning">${product.productId}</span>
+          <strong><spring:message code="productDetail.productId.label"/> </strong><span class="label label-warning">${product.productId}</span>
         </p>
         <p>
-          <strong>manufacturer</strong> : ${product.manufacturer}
+          <strong><spring:message code="productDetail.manufacturer.label"/></strong> : ${product.manufacturer}
         </p>
         <p>
-          <strong>category</strong> : ${product.category}
+          <strong><spring:message code="productDetail.category.label"/></strong> : ${product.category}
         </p>
         <p>
-          <strong>Availble units in stock </strong> : ${product.unitsInStock}
+          <strong><spring:message code="productDetail.availableUnitsInStock.label"/> </strong> : ${product.unitsInStock}
         </p>
         <h4>${product.unitPrice} USD</h4>
         <p>
