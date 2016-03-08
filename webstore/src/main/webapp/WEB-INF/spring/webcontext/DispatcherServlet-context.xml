@@ -20,6 +20,7 @@
   	<bean class= "org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
   		<property name="paramName" value="language"/>
   	</bean>
+  	<bean class="com.packt.webstore.interceptor.AuditingInterceptor"></bean>
   </mvc:interceptors>
   
   <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
