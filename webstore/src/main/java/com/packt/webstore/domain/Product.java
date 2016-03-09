@@ -14,6 +14,7 @@ import org.codehaus.jackson.annotate.JsonIgnore;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.packt.webstore.validator.Category;
 import com.packt.webstore.validator.ProductId;
 
 @XmlRootElement
@@ -36,6 +37,7 @@ public class Product {
 	  private String manufacturer;
 	  
 	  @NotEmpty(message="{NotEmpty.Product.category.validation}")
+	  @Category
 	  private String category;
 
 	  @Min(value=0,message="{Min.Product.unitsInStock.validation}")
