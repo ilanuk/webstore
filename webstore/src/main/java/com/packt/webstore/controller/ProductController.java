@@ -30,7 +30,7 @@ import com.packt.webstore.domain.Product;
 import com.packt.webstore.exception.NoProductsFoundUnderCategoryException;
 import com.packt.webstore.exception.ProductNotFoundException;
 import com.packt.webstore.service.ProductService;
-import com.packt.webstore.validator.UnitsInStockValidator;
+import com.packt.webstore.validator.ProductValidator;
 
 @RequestMapping("/products")
 @Controller
@@ -39,7 +39,7 @@ public class ProductController {
 	private ProductService productService; 
 	
 	@Autowired
-	private UnitsInStockValidator unitsInStockValidator;
+	private ProductValidator productValidator;
 	
 	@RequestMapping
 	public String list(Model model) {
@@ -101,7 +101,7 @@ public class ProductController {
 	public void initializeBinder(WebDataBinder binder) {
 		binder.setDisallowedFields("unitsInOrder","discontinued");
 		binder.setAllowedFields("productId","name","unitPrice","description","manufacturer","category","unitsInStock", "productImage", "condition","productManual","language");
-		binder.setValidator(unitsInStockValidator);
+		binder.setValidator(productValidator);
 	}
 	
 	

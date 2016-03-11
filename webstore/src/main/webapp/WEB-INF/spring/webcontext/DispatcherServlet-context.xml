@@ -72,4 +72,19 @@
 	<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
 		<property name="validationMessageSource" ref="messageSource"></property>
 	</bean>
+	
+	<bean id="productValidator" class="com.packt.webstore.validator.ProductValidator">
+		<property name="springValidators">
+		<set>
+			<ref bean="unitsInStockValidator"/>
+			<ref bean="productImageValidator"/>
+		</set>
+		</property>
+	</bean>
+	<bean id="unitsInStockValidator" class="com.packt.webstore.validator.UnitsInStockValidator">
+	</bean>
+	<bean id="productImageValidator" class="com.packt.webstore.validator.ProductImageValidator">
+		<property name="allowedSize" value="200000"></property>
+	</bean>
+	
 </beans>
