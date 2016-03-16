@@ -22,7 +22,7 @@ public class InMemoryCartRepository implements CartRepository {
 	public Cart create(Cart cart) {
 		if (listOfCarts.keySet().contains(cart.getCartId())) {
 			throw new IllegalArgumentException(String
-					.format("Can not create a cart. A cart with the give id (%) aldrady exist", cart.getCartId()));
+					.format("Can not create a cart. A cart with the give id (%) aldrady exists", cart.getCartId()));
 		}
 
 		listOfCarts.put(cart.getCartId(), cart);
@@ -38,7 +38,7 @@ public class InMemoryCartRepository implements CartRepository {
 	public void update(String cartId, Cart cart) {
 		if (!listOfCarts.keySet().contains(cartId)) {
 			throw new IllegalArgumentException(String
-					.format("Can not update cart. The cart with the give id (%) does not does not exist", cartId));
+					.format("Can not update cart. The cart with the give id (%) does not exist", cartId));
 		}
 
 		listOfCarts.put(cartId, cart);
@@ -48,7 +48,7 @@ public class InMemoryCartRepository implements CartRepository {
 	public void delete(String cartId) {
 		if (!listOfCarts.keySet().contains(cartId)) {
 			throw new IllegalArgumentException(String
-					.format("Can not delete cart. The cart with the give id (%) does not does not exist", cartId));
+					.format("Can not delete cart. The cart with the give id (%) does not exist", cartId));
 		}
 
 		listOfCarts.remove(cartId);
