@@ -1,25 +1,20 @@
-package com.packt.webstore.domain;
+package com.packt.webstore.domainold;
 
-import java.io.Serializable;
-
-public class Customer implements Serializable {
-
-	private static final long serialVersionUID = 2284040482222162898L;
+public class Customer {
 
 	private String customerId;
 	private String name;
-	private Address billingAddress;
-	private String phoneNumber;
+	private String address;
+	private long noOfOrdersMade;
 
 	public Customer() {
 		super();
-		this.billingAddress = new Address();
 	}
 
-	public Customer(String customerId, String name) {
-		this();
+	public Customer(String customerId, String name, String address) {
 		this.customerId = customerId;
 		this.name = name;
+		this.address = address;
 	}
 
 	public String getCustomerId() {
@@ -38,30 +33,30 @@ public class Customer implements Serializable {
 		this.name = name;
 	}
 
-	public Address getBillingAddress() {
-		return billingAddress;
+	public String getAddress() {
+		return address;
 	}
 
-	public void setBillingAddress(Address billingAddress) {
-		this.billingAddress = billingAddress;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
-	public String getPhoneNumber() {
-		return phoneNumber;
+	public long getNoOfOrdersMade() {
+		return noOfOrdersMade;
 	}
 
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
+	public void setNoOfOrdersMade(long noOfOrdersMade) {
+		this.noOfOrdersMade = noOfOrdersMade;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((billingAddress == null) ? 0 : billingAddress.hashCode());
+		result = prime * result + ((address == null) ? 0 : address.hashCode());
 		result = prime * result + ((customerId == null) ? 0 : customerId.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		result = prime * result + ((phoneNumber == null) ? 0 : phoneNumber.hashCode());
+		result = prime * result + (int) (noOfOrdersMade ^ (noOfOrdersMade >>> 32));
 		return result;
 	}
 
@@ -77,11 +72,11 @@ public class Customer implements Serializable {
 			return false;
 		}
 		Customer other = (Customer) obj;
-		if (billingAddress == null) {
-			if (other.billingAddress != null) {
+		if (address == null) {
+			if (other.address != null) {
 				return false;
 			}
-		} else if (!billingAddress.equals(other.billingAddress)) {
+		} else if (!address.equals(other.address)) {
 			return false;
 		}
 		if (customerId == null) {
@@ -98,16 +93,16 @@ public class Customer implements Serializable {
 		} else if (!name.equals(other.name)) {
 			return false;
 		}
-		if (phoneNumber == null) {
-			if (other.phoneNumber != null) {
-				return false;
-			}
-		} else if (!phoneNumber.equals(other.phoneNumber)) {
+		if (noOfOrdersMade != other.noOfOrdersMade) {
 			return false;
 		}
 		return true;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "Customer [customerId=" + customerId + ", name=" + name + ", address=" + address
+				+ ", noOfOrdersMade=" + noOfOrdersMade + "]";
+	}
 
 }

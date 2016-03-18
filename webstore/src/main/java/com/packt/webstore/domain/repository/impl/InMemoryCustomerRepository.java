@@ -5,8 +5,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.packt.webstore.domain.Customer;
 import com.packt.webstore.domain.repository.CustomerRepository;
+import com.packt.webstore.domainold.Customer;
 
 @Repository
 public class InMemoryCustomerRepository implements CustomerRepository {
