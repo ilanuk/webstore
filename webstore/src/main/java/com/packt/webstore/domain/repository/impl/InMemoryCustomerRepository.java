@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import com.packt.webstore.domain.repository.CustomerRepository;
-import com.packt.webstore.domainold.Customer;
+import com.packt.webstore.domain.Customer;
 
 @Repository
 public class InMemoryCustomerRepository implements CustomerRepository {
@@ -14,18 +14,18 @@ public class InMemoryCustomerRepository implements CustomerRepository {
 	private List<Customer> listOfCustomers = new ArrayList<Customer>();
 	
 	public InMemoryCustomerRepository() {
-		Customer first = new Customer("C001","Robert John", "Tampa, FL");
-		first.setNoOfOrdersMade(100);
-		Customer second = new Customer("C002","Chris Manny", "Miami, FL");
-		second.setNoOfOrdersMade(200);
-		Customer third = new Customer("C003","Mary Ann", "Atlanta, GA");
-		third.setNoOfOrdersMade(300);
-		Customer fourth = new Customer("C004","Glenn Martin", "New York, NY");
-		fourth.setNoOfOrdersMade(400);
-		listOfCustomers.add(first);
-		listOfCustomers.add(second);
-		listOfCustomers.add(third);
-		listOfCustomers.add(fourth);
+//		Customer first = new Customer("C001","Robert John", "Tampa, FL");
+//		first.setNoOfOrdersMade(100);
+//		Customer second = new Customer("C002","Chris Manny", "Miami, FL");
+//		second.setNoOfOrdersMade(200);
+//		Customer third = new Customer("C003","Mary Ann", "Atlanta, GA");
+//		third.setNoOfOrdersMade(300);
+//		Customer fourth = new Customer("C004","Glenn Martin", "New York, NY");
+//		fourth.setNoOfOrdersMade(400);
+//		listOfCustomers.add(first);
+//		listOfCustomers.add(second);
+//		listOfCustomers.add(third);
+//		listOfCustomers.add(fourth);
 	}
 
 	@Override
@@ -47,6 +47,24 @@ public class InMemoryCustomerRepository implements CustomerRepository {
 	@Override
 	public List<Customer> getAllCustomers() {
 		return listOfCustomers;
+	}
+
+	@Override
+	public void saveCustomer(Customer customer) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Customer getCustomer(String customerId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Boolean isCustomerExist(String customerId) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

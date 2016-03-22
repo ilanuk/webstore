@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.packt.webstore.domain.repository.CustomerRepository;
-import com.packt.webstore.domainold.Customer;
+import com.packt.webstore.domain.Customer;
 import com.packt.webstore.service.CustomerService;
 
 @Service
@@ -24,5 +24,24 @@ public class CustomerServiceImpl implements CustomerService {
 	public Customer getCustomerById(String customerID) {
 		return customerRepository.getCustomerById(customerID);
 	}
+
+	@Override
+	public void saveCustomer(Customer customer) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Customer getCustomer(String customerId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Boolean isCustomerExist(String customerId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 }
