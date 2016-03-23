@@ -27,20 +27,18 @@ public class CustomerServiceImpl implements CustomerService {
 
 	@Override
 	public void saveCustomer(Customer customer) {
-		// TODO Auto-generated method stub
+		customerRepository.saveCustomer(customer);
 		
 	}
 
 	@Override
 	public Customer getCustomer(String customerId) {
-		// TODO Auto-generated method stub
-		return null;
+		return customerRepository.getCustomerById(customerId);
 	}
 
 	@Override
 	public Boolean isCustomerExist(String customerId) {
-		// TODO Auto-generated method stub
-		return null;
+		return customerRepository.isCustomerExist(customerId);
 	}
 
 
