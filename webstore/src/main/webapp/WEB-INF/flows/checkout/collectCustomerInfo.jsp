@@ -4,7 +4,7 @@
 
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet"
 	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 <title>Customer</title>
@@ -24,7 +24,7 @@
 				<legend>Customer Details</legend>
 
 				<div class="form-group">
-					<label class="control-label col-lg-2 col-lg-2" for="customerId" />Customer Id</label>
+					<label class="control-label col-lg-2 col-lg-2" for="customerId" >Customer Id</label>
 					<div class="col-lg-10">
 						<form:input id="customerId" path="customerId" type="text" class="form:input-large" />
 					</div>

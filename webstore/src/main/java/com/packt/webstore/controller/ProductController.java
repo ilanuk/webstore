@@ -1,7 +1,6 @@
 package com.packt.webstore.controller;
 
 import java.io.File;
-import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -75,7 +74,6 @@ public class ProductController {
 
 	@RequestMapping("/filter/{ByCriteria}")
 	public String getProductsByFilter(Model model,@MatrixVariable(pathVar="ByCriteria") Map<String, List<String>> filterParams) {
-		Set<String> keys = filterParams.keySet();
 		if(filterParams.containsKey("brand") || filterParams.containsKey("category"))
 			model.addAttribute("products",productService.getProductsByFilter(filterParams));
 		else
