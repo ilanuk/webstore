@@ -39,7 +39,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.spr
 
   <view-state id="collectShippingDetail" model="order">
     <transition on="shippingDetailCollected" to="orderConfirmation" />
-    <transition on="backToCollectCustomerInfo" to="collectCustomerInfo" />
+    <transition on="backToCollectCustomerId" to="collectCustomerId" />
   </view-state>
 
   <view-state id="orderConfirmation">
