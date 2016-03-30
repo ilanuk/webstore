@@ -25,13 +25,14 @@ public class ProductValidatorTest {
   public void product_without_UnitPrice_should_be_invalid() {
     //Arrange
     Product product = new Product();
+    //product.setUnitPrice(new BigDecimal(100));
     BindException bindException = new BindException(product, "product");
 
     //Act
     ValidationUtils.invokeValidator(productValidator, product, bindException);
     
     //Assert
-    Assert.assertEquals(1, bindException.getErrorCount()); 
+    Assert.assertEquals(3, bindException.getErrorCount()); 
     Assert.assertTrue(bindException.getLocalizedMessage().contains("Unit price is Invalid. It cannot be empty."));
   }
   
