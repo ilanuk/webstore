@@ -5,28 +5,31 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
-public class PromoCodeInterceptor extends HandlerInterceptorAdapter{
-	
-	  private String promoCode;
-	  private String errorRedirect;
-	  private String offerRedirect;
-	  
-	  public boolean preHandle(HttpServletRequest request,HttpServletResponse response, Object handler) throws Exception {
-		String givenPromoCode = request.getParameterValues("promo")== null ? "" :request.getParameterValues("promo")[0];
-		if(request.getRequestURI().endsWith("products/specialOffer")) {
-			if(givenPromoCode.equals(promoCode)) {
+public class PromoCodeInterceptor extends HandlerInterceptorAdapter {
+
+	private String promoCode;
+	private String errorRedirect;
+	private String offerRedirect;
+
+	@Override
+	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
+			throws Exception {
+		String givenPromoCode = request.getParameterValues("promo") == null ? ""
+				: request.getParameterValues("promo")[0];
+		if (request.getRequestURI().endsWith("products/specialOffer")) {
+			if (givenPromoCode.equals(promoCode)) {
 				response.sendRedirect(request.getContextPath() + "/" + offerRedirect);
-			}else {
+			} else {
 				response.sendRedirect(errorRedirect);
 			}
 			return false;
 		}
 		return true;
-	  }
+	}
 
-	  public String getPromoCode() {
-		    return promoCode;
-	  }
+	public String getPromoCode() {
+		return promoCode;
+	}
 
 	public String getErrorRedirect() {
 		return errorRedirect;
@@ -47,6 +50,5 @@ public class PromoCodeInterceptor extends HandlerInterceptorAdapter{
 	public void setPromoCode(String promoCode) {
 		this.promoCode = promoCode;
 	}
-	  
-	  
+
 }
